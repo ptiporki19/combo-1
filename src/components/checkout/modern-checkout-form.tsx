@@ -288,11 +288,11 @@ export function ModernCheckoutForm({ slug }: ModernCheckoutFormProps) {
       
       // Determine the amount to send
       let finalAmount: string
-      if (checkoutData.checkout_link.amount_type === 'fixed') {
+    if (checkoutData.checkout_link.amount_type === 'fixed') {
         finalAmount = checkoutData.checkout_link.checkout_type === 'product' 
           ? (checkoutData.checkout_link.custom_price || checkoutData.checkout_link.amount).toString()
           : checkoutData.checkout_link.amount.toString()
-      } else {
+    } else {
         finalAmount = amount
       }
       formData.append('amount', finalAmount)
@@ -471,7 +471,7 @@ export function ModernCheckoutForm({ slug }: ModernCheckoutFormProps) {
               <div className="max-w-md mx-auto w-full text-center relative z-10">
                 <div className="text-lg text-muted-foreground font-geist mb-4">
                   Complete your payment
-                </div>
+                  </div>
                 {checkoutLink.amount_type === 'fixed' ? (
                   <div>
                     <div className="text-4xl font-bold text-foreground font-geist mb-4">
@@ -656,11 +656,11 @@ export function ModernCheckoutForm({ slug }: ModernCheckoutFormProps) {
                 <div>
                                 <h4 className="font-medium text-sm text-foreground font-geist">{method.name}</h4>
                 </div>
-                            </div>
                         </div>
-                        ))}
                       </div>
-                    )}
+                    ))}
+                  </div>
+                )}
                     
                     <div className="mt-auto pt-6">
                       <Button 
@@ -699,20 +699,20 @@ export function ModernCheckoutForm({ slug }: ModernCheckoutFormProps) {
                             <div key={field.id || index} className="flex items-center justify-between p-4 bg-muted/50 rounded border">
                               <div className="text-sm font-medium text-foreground font-geist">
                                 {field.label}
-                              </div>
+                          </div>
                               <div className="flex items-center gap-3">
                                 <div className="text-sm font-medium text-foreground font-geist font-mono">
-                                  {formatValueForDisplay(field.value)}
+                              {formatValueForDisplay(field.value)}
                                 </div>
-                                <button 
-                                  type="button" 
-                                  onClick={() => handleCopy(field.value)} 
+                            <button 
+                              type="button" 
+                              onClick={() => handleCopy(field.value)} 
                                     className="p-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors" 
                                     title="Copy to clipboard"
-                                >
-                                  <Copy className="h-4 w-4" />
-                                </button>
-                              </div>
+                            >
+                              <Copy className="h-4 w-4" />
+                            </button>
+                          </div>
                         </div>
                       ))}
                       {selectedPaymentMethod.additional_info && (
@@ -730,16 +730,16 @@ export function ModernCheckoutForm({ slug }: ModernCheckoutFormProps) {
                 
                                         {/* Important note about proof of payment */}
                     <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4">
-                      <div className="flex items-start gap-3">
+                  <div className="flex items-start gap-3">
                         <AlertTriangle className="h-5 w-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
-                        <div>
+                    <div>
                           <h4 className="text-sm font-medium text-amber-900 dark:text-amber-100 mb-1 font-geist">Next Step</h4>
                           <p className="text-sm text-amber-800 dark:text-amber-200 font-geist">
                             After completing your payment, take a screenshot showing the transaction details and upload it on the next page. Ensure the amount, date, and reference are clearly visible for quick verification.
-                          </p>
-                        </div>
-                      </div>
+                      </p>
                     </div>
+                  </div>
+                </div>
                 
                     <div className="mt-auto pt-6">
                       <Button 
@@ -758,25 +758,25 @@ export function ModernCheckoutForm({ slug }: ModernCheckoutFormProps) {
                   <div className="space-y-4">
                         <div className="mx-auto w-12 h-12 bg-muted rounded-lg flex items-center justify-center">
                           <Upload className="h-6 w-6 text-muted-foreground" />
-                        </div>
-                        <div>
+                    </div>
+                    <div>
                           <h3 className="text-lg font-medium text-foreground mb-2 font-geist text-center">Choose your file</h3>
                           <p className="text-sm text-muted-foreground mb-4 font-geist text-center">Upload clear proof of your payment transaction</p>
                           
                           {/* Enhanced file guidance */}
                           <div className="mb-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg text-center">
                             <p className="text-sm text-blue-800 dark:text-blue-200 font-geist font-medium mb-2">What to include in your proof:</p>
-                            <ul className="text-xs text-blue-700 dark:text-blue-300 font-geist text-left space-y-1">
-                              <li>• Transaction amount and date</li>
-                              <li>• Payment reference number</li>
-                              <li>• Recipient details (if visible)</li>
-                              <li>• Payment confirmation status</li>
+                            <ul className="text-xs text-blue-700 dark:text-blue-300 font-geist text-center">
+                              <li>- Transaction amount and date</li>
+                              <li>- Payment reference number</li>
+                              <li>- Recipient details (if visible)</li>
+                              <li>- Payment confirmation status</li>
                             </ul>
                             <div className="mt-3 pt-3 border-t border-blue-200 dark:border-blue-700">
                               <p className="text-xs text-blue-800 dark:text-blue-200 font-geist">
                                 <span className="font-medium">Supported formats:</span> JPG, PNG, PDF • <span className="font-medium">Max size:</span> 10MB
                               </p>
-                            </div>
+                        </div>
                       </div>
                       
                       <input
@@ -842,12 +842,12 @@ export function ModernCheckoutForm({ slug }: ModernCheckoutFormProps) {
                           <p className="text-sm text-muted-foreground font-geist">
                             Reference: <span className="font-mono text-foreground">{paymentId}</span>
                           </p>
-                        </div>
-                      )}
-                    </div>
                     </div>
                   )}
+                </div>
               </div>
+            )}
+          </div>
             </div>
           </div>
         </div>
